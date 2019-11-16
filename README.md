@@ -2,11 +2,10 @@
 
 Find library study partners. A project for university.
 
-## Technology
+## Technologies
 
 - Python with [Flask](https://github.com/pallets/flask/) for the backend
-
-
+- [React](https://reactjs.org/) and [Bulma](https://bulma.io/) for the frontend
 
 ## Setup
 
