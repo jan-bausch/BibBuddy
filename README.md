@@ -1,6 +1,7 @@
 # BibBuddy
 
-Find library study partners. A project for university.
+> A web application to match students who like to learn together for a particular class or subject.
+> Students can appoint new study groups for a room, date and time. Other students may join this group.
 
 ## Technologies
 
@@ -16,3 +17,7 @@ docker-compose up
 ```
 
 After that, the server is available under [localhost:5000](http://localhost:5000).
+
+## More information
+
+This is a project as part of the ["Educational Technology" seminar](https://www.edutec.guru/teaching/).
