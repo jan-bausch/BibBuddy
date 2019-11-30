@@ -1,5 +1,7 @@
 FROM python:alpine
 
+ARG FLASK_DEBUG
+
 EXPOSE 5000
 
 WORKDIR app

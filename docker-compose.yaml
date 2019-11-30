@@ -5,8 +5,12 @@ services:
     build: ./backend
     ports: ['5001:5000']
     volumes: ['./backend:/app']
+    environment:
+      - FLASK_DEBUG=1
 
   frontend:
     build: ./frontend
     ports: ['5000:1234']
     volumes: ['./frontend:/app']
+    environment:
+      - BACKEND_HOST=http://localhost:5001

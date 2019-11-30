@@ -1,15 +1,17 @@
 import os
 
-from flask import Flask
+from flask_api import FlaskAPI
+from flask_api.exceptions import NotFound
 from flask import jsonify
 
-app = Flask(__name__)
+app = FlaskAPI(__name__)
 
 @app.route("/")
 def index():
-    return jsonify(
-        version="1.0.0"
-    )
+    raise NotFound("sHello World")
+    return jsonify({
+        "version": "1.0.0"
+    })
 
 @app.route("/calendar")
 def calendar():
@@ -35,4 +37,4 @@ def calendar():
     })
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0")
+    app.run(host="0.0.0.0")
