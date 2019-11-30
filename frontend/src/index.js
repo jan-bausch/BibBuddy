@@ -1,16 +1,13 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import GroupList from './components/GroupList';
 
-class HelloMessage extends React.Component {
+class App extends Component {
    render() {
       return <div>
-         <div className="container">
-            <h1>Hello {this.props.name}</h1>
-         </div>
+         <GroupList/>
       </div>
    }
 }
 
-const App = document.getElementById("app");
-
-ReactDOM.render(<HelloMessage name="Jan" />, App);
+ReactDOM.render(<App/>, document.getElementById('app'));

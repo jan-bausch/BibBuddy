@@ -1,10 +1,12 @@
 import os
 
 from flask_api import FlaskAPI
+from flask_cors import CORS
 from flask_api.exceptions import NotFound
 from flask import jsonify
 
 app = FlaskAPI(__name__)
+CORS(app)
 
 @app.route("/")
 def index():
