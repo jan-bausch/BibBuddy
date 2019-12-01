@@ -8,19 +8,22 @@ export default class GroupList extends Component {
       this.state = { groups: [] };
    }
    componentDidMount() {
-      let self = this;
       API.fetch('/calendar').then(data => 
          this.setState({groups: data.groups})
-      ).catch(console.log)
+      );
    }
    createList() {
       return this.state.groups.map(group =>
-         <Group/>
+         <div className="column is-one-third">
+            <Group key={group.id} group={group} />
+         </div>
       );
    }
    render() {
-      return <div>
+      return <div className="container">
+         <div className="columns is-multi-line">
          { this.createList() }
+         </div>
       </div>
    }
 }
