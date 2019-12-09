@@ -2,15 +2,26 @@ version: "3"
 services:
 
   backend:
-    build: ./backend
-    ports: ['5001:5000']
-    volumes: ['./backend:/app']
+    image: python:alpine
+    container_name: backend
+    working_dir: /app
+    volumes:
+      - './backend:/app'
+    ports:
+      - '5001:5000'
     environment:
       - FLASK_DEBUG=1
+    command: sh -c 'pwd && pip install -r requirements.txt && python __init__.py'
 
   frontend:
-    build: ./frontend
-    ports: ['5000:1234']
-    volumes: ['./frontend:/app']
+    image: node:12.2.0-alpine
+    container_name: frontend
+    working_dir: /app
+    volumes:
+      - './frontend:/app'
+    ports:
+      - '5000:1234'
+      - '46697:46697'
     environment:
       - BACKEND_HOST=http://localhost:5001
+    command: sh -c 'npm install && npm run start'
