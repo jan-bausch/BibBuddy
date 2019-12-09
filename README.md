@@ -3,6 +3,9 @@
 > A web application to match students who like to learn together for a particular class or subject.
 > Students can appoint new study groups for a room, date and time. Other students may join this group.
 
+
+![Screenshot](screenshot.png)
+
 ## Technologies
 
 - Python with [Flask](https://github.com/pallets/flask/) for the backend
