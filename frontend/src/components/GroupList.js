@@ -8,7 +8,7 @@ export default class GroupList extends Component {
       this.state = { groups: [] };
    }
    componentDidMount() {
-      API.fetch('/calendar').then(data => 
+      API.fetch('/groups').then(data => 
          this.setState({groups: data.groups})
       );
    }
