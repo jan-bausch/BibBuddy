@@ -3,7 +3,7 @@ import os
 from flask_api import FlaskAPI
 from flask_cors import CORS
 from flask_api.exceptions import NotFound
-from flask import jsonify
+from flask import jsonify, request
 
 app = FlaskAPI(__name__)
 CORS(app)
@@ -28,6 +28,7 @@ groups = [
         "is_member": False
     },
 ]
+groupIdCounter = 989
 
 @app.route("/")
 def index():
@@ -41,6 +42,24 @@ def list_groups():
     return jsonify({
         "groups": groups
     })
+
+@app.route("/groups", methods = ["POST"])
+def create_group():
+    data = request.json
+    global groups
+    global groupIdCounter
+    groupIdCounter += 1
+    newGroup = {
+        "id": str(groupIdCounter),
+        "description": data["description"],
+        "date": data["date"],
+        "start": data["start"],
+        "end": data["end"],
+        "members": 1,
+        "is_member": True
+    }
+    groups.append(newGroup)
+    return "Success"
 
 @app.route("/groups/<id>/join", methods = ["PUT"])
 def join_group(id):

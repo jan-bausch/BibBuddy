@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import GroupList from './components/GroupList';
+import GroupForm from './components/GroupForm';
 import Logo from '../static/logo.svg'
 import './css/index.css'
 
@@ -24,6 +25,9 @@ class App extends Component {
          </section>
          <section className="section">
             <GroupList/>
+         </section>
+         <section className="section">
+            <GroupForm/>
          </section>
       </>
    }
