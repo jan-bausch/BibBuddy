@@ -3,9 +3,7 @@ import API from '../helpers/API';
 
 export default class Group extends Component {
    handleJoinButtonClick(id) {
-      API.fetch(`/groups/${id}/join`, {method: 'PUT'}).then(data => 
-         console.log(data)
-      );
+      API.put(`/groups/${id}/join`);
    }
    render() {
       return <div className="box">

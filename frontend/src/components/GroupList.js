@@ -8,8 +8,8 @@ export default class GroupList extends Component {
       this.state = { groups: [] };
    }
    componentDidMount() {
-      API.fetch('/groups').then(data => 
-         this.setState({groups: data.groups})
+      API.get('/groups').then(response => 
+         this.setState({groups: response.data.groups})
       );
    }
    createList() {

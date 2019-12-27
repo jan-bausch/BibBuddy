@@ -1,15 +1,6 @@
-const baseUrl = process.env.BACKEND_HOST;
+const axios = require('axios');
 
-export default class API {
-   static fetch(endpoint, data = {}) {
-      const url = baseUrl + endpoint;
-      return fetch(url, data).then(response => {
-         const contentType = response.headers.get("content-type");
-         if (contentType && contentType.indexOf("application/json") !== -1) {
-            return response.json()
-         } else {
-            return response.text()
-         }
-      });
-   }
-}
+export default axios.create({
+   baseURL: process.env.BACKEND_HOST,
+   withCredentials: true
+})

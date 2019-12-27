@@ -29,16 +29,7 @@ export default class GroupList extends Component {
       this.setState({ end: parseInt(e.target.value, 10) });
    }
    handleSubmitButtonClick() {
-      API.fetch(`/groups`, {
-         method: 'POST',
-         headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-         },
-         body: JSON.stringify(this.state)
-      }).then(data => 
-         console.log(data)
-      );
+      API.post(`/groups`, this.state);
    }
    render() {
       return <div className="container">

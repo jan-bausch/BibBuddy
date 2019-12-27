@@ -11,7 +11,7 @@ services:
       - '5001:5000'
     environment:
       - FLASK_DEBUG=1
-    command: sh -c 'pwd && pip install -r requirements.txt && python __init__.py'
+    command: sh -c 'pip install -r requirements.txt && python __init__.py'
 
   frontend:
     image: node:12.2.0-alpine
