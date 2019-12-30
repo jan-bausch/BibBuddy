@@ -21,7 +21,7 @@ export default class GroupList extends Component {
    }
    render() {
       return <div className="container">
-         <div className="columns is-multi-line">
+         <div className="columns is-multiline">
          { this.createList() }
          </div>
       </div>
