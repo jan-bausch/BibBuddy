@@ -21,6 +21,7 @@ export default class GroupList extends Component {
    }
    render() {
       return <div className="container">
+         <h2 className="title is-4">Finde eine Lerngruppe</h2>
          <div className="columns is-multiline">
          { this.createList() }
          </div>

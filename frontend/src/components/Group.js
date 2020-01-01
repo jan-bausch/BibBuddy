@@ -28,7 +28,7 @@ export default class Group extends Component {
                disabled={ this.props.group.is_member }
             >
                <span className="icon"><i className={`oi oi-${this.props.group.is_member ? 'check' : 'chevron-right'}`}></i></span>
-               <span>{this.props.group.is_member ? 'Beigetreten' : 'Teilnehmen'}</span>
+               <span>{this.props.group.is_member ? 'Beigetreten' : 'Beitreten'}</span>
             </button>
          </div>
       </div>

@@ -27,6 +27,22 @@ groups = [
         "end": 11,
         "members": 1
     },
+    {
+        "id": "923511",
+        "description": "Hardware II",
+        "date": "2019-01-17",
+        "start": 10,
+        "end": 18,
+        "members": 3
+    },
+    {
+        "id": "719",
+        "description": "Eduational Technologies",
+        "date": "2019-01-18",
+        "start": 18,
+        "end": 20,
+        "members": 1
+    }
 ]
 
 @app.route("/")
