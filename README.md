@@ -4,7 +4,9 @@
 > Students can appoint new study groups for a room, date and time. Other students may join this group.
 
 
-<img src="screenshot.png" alt="Screenshot" width="70%">
+<p align="center">
+   <img src="screenshot.png" alt="Screenshot" width="70%">
+</p>
 
 ## Technologies
 
