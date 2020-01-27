@@ -7,8 +7,6 @@ services:
     working_dir: /app
     volumes:
       - './backend:/app'
-    ports:
-      - '5001:5000'
     environment:
       - FLASK_DEBUG=1
     command: sh -c 'pip install -r requirements.txt && python __init__.py'
@@ -19,9 +17,18 @@ services:
     working_dir: /app
     volumes:
       - './frontend:/app'
-    ports:
-      - '5000:1234'
-      - '46697:46697'
     environment:
-      - BACKEND_HOST=http://localhost:5001
+      - BACKEND_HOST=http://localhost:8080/api
     command: sh -c 'npm install && npm run start'
+
+  nginx: 
+    image: nginx:latest
+    container_name: nginx
+    volumes:
+      - './nginx/nginx.conf:/etc/nginx/nginx.conf'
+    ports:
+      - '8080:8080'
+
+networks:
+  default:
+    driver: bridge
