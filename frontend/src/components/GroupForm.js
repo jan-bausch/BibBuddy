@@ -33,7 +33,8 @@ export default class GroupList extends Component {
       this.setState({ end: parseInt(e.target.value, 10) });
    }
    handleSubmitButtonClick() {
-      API.post(`/groups`, this.state);
+      // TODO: Redux
+      API.post(`/groups`, this.state).then(() => window.location.reload());
    }
    range(start, end) {
       const count = end - start;

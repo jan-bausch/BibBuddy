@@ -4,7 +4,8 @@ import { hoursToTime } from '../helpers/Hours';
 
 export default class Group extends Component {
    handleJoinButtonClick(id) {
-      API.put(`/groups/${id}/join`);
+      // TODO: Redux
+      API.put(`/groups/${id}/join`).then(() => window.location.reload());
    }
    render() {
       return <div className="box">
